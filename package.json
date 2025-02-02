@@ -1,0 +1,19 @@
+{
+  "name": "astewuolversion",
+  "version": "1.0.0",
+  "description": "beckendFinalproject",
+  "license": "MIT",
+  "author": "astewuol tsagagow",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env DEBUG=app:startup,app:db nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "debug": "^4.4.0",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}
