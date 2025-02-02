@@ -35,7 +35,7 @@ app.use('/api/users',users);
 
 app.use('/api/users/:id',users);
 
-// get dev team names 
+
 app.use('/api/about', devTeam);
 
 
