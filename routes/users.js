@@ -2,8 +2,38 @@ const express = require('express');
 const router = express.Router();
 const CostModel = require('../module/costModel.js');
 const UsersModel = require('../module/usersModel.js');
+const User = require('../module/usersModel.js');
 
+router.get('/',async (req,res)=>{
+    try{
 
+        const users = await User.find({});
+        if(users.length ===0)
+        {
+            return res.status(201).json({message:"no users found on DB"});
+        };
+        return res.status(200).json({users})
+    }
+    catch(err)
+    {
+        return res.status(401).json(err.message);
+    }
+})
+
+router.post('/',async (req,res)=>{
+    const {id ,first_name,last_name,birthday ,marital_status} = req.body;
+    // to do Validations
+try{
+    const addUserToDb=await User.create({id,first_name,last_name,birthday,marital_status});
+    return res.status(200).json(addUserToDb);
+}
+catch(err)
+{
+    res.status(400).json(err.message);
+}
+    
+
+})
 
 router.get('/:id', async (req, res) => {
   try {

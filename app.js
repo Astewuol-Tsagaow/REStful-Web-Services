@@ -24,18 +24,16 @@ async function connectTodb()
 connectTodb();
 
 
-
+// costs rout
 app.use('/api',costs);
 app.use('/api/add',costs);
 app.use('api/report',costs);
 
 
-
+// users rout 
 app.use('/api/users',users);
-
+app.use('/api/users/add',users);
 app.use('/api/users/:id',users);
-
-
 app.use('/api/about', devTeam);
 
 
